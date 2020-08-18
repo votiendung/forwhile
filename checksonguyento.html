@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   do {
+       let num = parseInt(prompt('Input number'));
+       if (!isNaN(num)){
+           break;
+       }else {
+           alert("you need to number! Please try again!");
+       }
+   }while (isNaN(num));
+   function isPremi(n){
+       if (n < 2) {
+           return false;
+       }else {
+           if (n <= 3){
+               return true;
+           }else {
+               for (let i = 2; i <= Math.sqrt(n); i++){
+                   if (n % i == 0){
+                       return false;
+                   }
+               }
+               return true;
+           }
+       }
+   }
+   let count = 0;
+   let start = 2;
+   while (count < 20){
+       if (isPremi(start)){
+           document.writeln(start + " ");count++;
+           start++;
+       }
+   }
+</script>
+</body>
+</html>
